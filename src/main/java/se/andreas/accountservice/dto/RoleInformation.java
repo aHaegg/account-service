@@ -2,13 +2,13 @@ package se.andreas.accountservice.dto;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(using = AccountRoleSerializer.class)
-public class AccountRole extends BusinessObject {
+@JsonSerialize(using = RoleInformationSerializer.class)
+public class RoleInformation extends BusinessObject {
 
     private String name;
     private Role role;
 
-    public AccountRole(String name, Role role) {
+    public RoleInformation(String name, Role role) {
         this.name = name;
         this.role = role;
     }

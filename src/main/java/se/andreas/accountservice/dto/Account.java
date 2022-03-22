@@ -1,33 +1,22 @@
 package se.andreas.accountservice.dto;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Account {
-    private String name;
-    private List<BusinessObject> businessObjects;
 
-    public Account() {
-    }
+    private final String name;
+    private final List<BusinessObject> businessObjects;
 
     public Account(String name) {
         this.name = name;
         this.businessObjects = new ArrayList<>();
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public List<BusinessObject> getBusinessObjects() {
         return businessObjects;
-    }
-
-    public void setBusinessObjects(List<BusinessObject> businessObjects) {
-        this.businessObjects = businessObjects;
     }
 }

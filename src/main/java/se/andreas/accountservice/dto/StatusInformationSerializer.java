@@ -6,13 +6,13 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 import java.io.IOException;
 
-public class StatusSerializer extends JsonSerializer<Status> {
+public class StatusInformationSerializer extends JsonSerializer<StatusInformation> {
     @Override
-    public void serialize(Status accountRole, JsonGenerator generator, SerializerProvider serializerProvider) throws IOException {
+    public void serialize(StatusInformation statusInformation, JsonGenerator generator, SerializerProvider serializerProvider) throws IOException {
         generator.writeStartObject();
-        generator.writeFieldName(accountRole.getClass().getSimpleName());
+        generator.writeFieldName(statusInformation.getClass().getSimpleName());
         generator.writeStartObject();
-        generator.writeStringField("statusType", accountRole.getStatusType().name());
+        generator.writeStringField("status", statusInformation.getStatus().name());
         generator.writeEndObject();
         generator.writeEndObject();
     }
